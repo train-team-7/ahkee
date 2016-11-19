@@ -1,0 +1,64 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>js-0</title>
+    
+</head>
+<body>
+
+<table>
+
+    <tr>
+        <td>名称</td>
+        <td><input type="text" id="x"></td>
+        <td>
+            <button onclick="doing();">验证</button>
+        </td>
+    </tr>
+
+
+    <tr>
+        <td></td>
+        <td id="txt">必填，长度为4~16个字符</td>
+        <td></td>
+    </tr>
+
+</table>
+
+</body>
+
+
+<script>
+    var x = document.getElementsByTagName('input')[0];
+    var txtIn = document.getElementById('txt');
+ 
+    function doing() {
+        var xlen = x.value.length;
+
+        if (xlen == 0) {
+            txtIn.innerHTML = '姓名不能为空';
+            txtIn.style.color = 'red';
+            x.style.border = '1px solid red';
+        } 
+
+
+
+        else if (xlen >= 4 && xlen <= 16) {
+            txtIn.innerHTML = '格式正确';
+            txtIn.style.color = 'green';
+            x.style.border = '1px solid green';
+        } 
+
+
+
+        else {
+            txtIn.innerHTML = '请输入长度为4~16位字符';
+            txtIn.style.color = 'red'
+            x.style.border = '1px solid red';
+        }
+    }
+   
+</script>
+</html>
